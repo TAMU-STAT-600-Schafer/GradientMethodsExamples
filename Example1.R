@@ -16,7 +16,9 @@ fdoubleprime <- function(x){
 }
 
 # Basic function visualization
-plot(seq(-10, 12, length = 100), f(seq(-10, 12, length = 100)), type = "l", xlab = "x", ylab = "f(x)") 
+plot(seq(-10, 12, length = 100), 
+     f(seq(-10, 12, length = 100)), 
+     type = "l", xlab = "x", ylab = "f(x)") 
 
 # Use built in solvers to minimize f(x)
 ########################################################
@@ -44,11 +46,19 @@ nIter = 30
 # Small step size
 alpha = 0.001
 
-out_small <- SteepestDescent(f, fprime, x0 = 0, alpha = alpha, nIter = nIter)
+out_small <- SteepestDescent(f, 
+                             fprime, 
+                             x0 = 0, 
+                             alpha = alpha, 
+                             nIter = nIter)
 
-plot(0:nIter, out_small$xvec, type = 'o', xlab = "Iteration t", ylab = "Value of xt")
+plot(0:nIter, out_small$xvec, 
+     type = 'o', xlab = "Iteration t", 
+     ylab = "Value of xt")
 
-plot(0:nIter, out_small$fvec, type = 'o', xlab = "Iteration t", ylab = "Value of f(xt)")
+plot(0:nIter, out_small$fvec, 
+     type = 'o', xlab = "Iteration t", 
+     ylab = "Value of f(xt)")
 
 # Medium step size
 alpha = 0.01
