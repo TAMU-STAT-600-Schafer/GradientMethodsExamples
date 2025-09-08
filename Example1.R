@@ -30,7 +30,8 @@ uniroot(fprime, interval = c(-100, 100))
 library(bench)
 out <- mark(
   optimize(f, interval = c(-100, 100)),
-  uniroot(fprime, interval = c(-100, 100))
+  uniroot(fprime, interval = c(-100, 100)),
+  check = FALSE
 )
 out
 plot(out)
