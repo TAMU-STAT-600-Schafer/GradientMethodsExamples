@@ -42,16 +42,9 @@ plot(0:nIter, out_small2$fvec, type = 'o', xlab = "Iteration", ylab = "f(beta)")
 
 # Compare the two solvers
 #######################################################################
-# Return the same answer
-sum(abs(out_small2$fvec - out_small$fvec))
+# [ToDo] Test they return the same answer
 
-# In terms of speed
-library(microbenchmark)
-microbenchmark(
-  SteepestDescentVec(f = logistic_objective, fgradient = logistic_gradient, x0 = beta_init, alpha = alpha, nIter = nIter, X = X, y = y),
-  SteepestDescentBinLogistic(X = X, y = y, beta_init = beta_init, alpha = alpha, nIter = nIter),
-  times = 10
-)
+# [ToDo] Compare performance in terms of speed with bench
 
 # Different starting point and step sizes
 ###########################################
