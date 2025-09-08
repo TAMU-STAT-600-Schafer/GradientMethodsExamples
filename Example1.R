@@ -27,11 +27,13 @@ optimize(f, interval = c(-100, 100))
 uniroot(fprime, interval = c(-100, 100))
 
 # Compare the two in terms of speed - optimize is faster here
-library(microbenchmark)
-microbenchmark(
+library(bench)
+out <- mark(
   optimize(f, interval = c(-100, 100)),
   uniroot(fprime, interval = c(-100, 100))
 )
+out
+plot(out)
 
 # Use steepest descent with different step sizes
 ########################################################
